@@ -1,0 +1,39 @@
+Big O notation: Notation describing efficiancy/complexity of algorithms.
+O(1) Constant Time Complexity: runtime constant regardless of size.
+O(n) Linear Time Complexity: runtime grows linearly with input size.
+O(n^2) Quadratic Time Complexity: runtime grows quadratically with input size.
+
+function summation(n) {
+  let sum = 0; 
+  for (let i=1; i <= n; i++) {
+    sum =+ i;
+  }
+  return sum;
+}
+
+Example: n = 4
+line 15 runs 1
+line 17 runs 4
+line 19 runs 1
+
+Complexity = O(n + 2) HOWEVER, we always want to think of large databases so the 2 is negligible. 
+
+Actual Time Complexity = O(n);
+
+NOTE: Most loops are O(n) Linear.
+NOTE: 1 nested loops are O(n^2) Quadratic.
+  for (i=1; i <= n; i++) {
+    for (j=1; j<=i; j++) {
+
+    }
+  }
+
+NOTE: 2 nested loops is O(n^3) Cubic.
+  for (i=1; i <= n; i++) {
+    for (j=1; j<=i; j++) {
+      for (k=1; k<=j; K++) {
+
+      }
+    }
+  }
+NOTE: Input size reduces by 1/2 is O(log n) Logarithmic

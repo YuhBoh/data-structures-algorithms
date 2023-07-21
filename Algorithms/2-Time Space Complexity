@@ -1,0 +1,4 @@
+Time Complexity: Time taken by algorithm to run as input size grows.
+Space Complexity: Memory/Storage algorithm requires to run as input size grows.
+
+Both measured by "big O notation".
