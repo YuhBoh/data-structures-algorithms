@@ -37,3 +37,39 @@ NOTE: 2 nested loops is O(n^3) Cubic.
     }
   }
 NOTE: Input size reduces by 1/2 is O(log n) Logarithmic
+
+
+Space Complexity:
+Measure of the amount of memory/space required by an algorithms to solve a problem depending on input size.
+
+EXAMPLE 1:
+
+function test(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+}
+
+const arr = [1, 2, 3, 4, 5];
+test(arr);
+
+Space Complexity - 0(1) because no extra memory is added relative to input size.
+
+EXAMPLE 2:
+
+function test2(arr) {
+  let count = 0;
+  const result = [];
+
+  for ( let i = 0; i < arr.length; i++ ) {
+    result[i] = arr[i];
+    count++;
+  }
+  console.log(count);
+  return result;
+}
+
+const arr = [1, 2, 3, 4, 5];
+console.log(test2(arr));
+
+Space Complexity - O(n) because memory(result) increases linearly as input size increases.
