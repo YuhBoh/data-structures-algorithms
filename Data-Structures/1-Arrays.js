@@ -36,7 +36,7 @@ for (item of arr) {
 
 
 // .splice() - adds and/or removes array elements
-           //  array.splice(index, howmany, item1, ....., itemX)
+           //  array.splice(position(not index), howmanyafterposition, item1, ....., itemX)
 
 // Big-O time complexity
 // Insert/Remove from end - O(1)
