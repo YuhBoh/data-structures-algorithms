@@ -28,6 +28,9 @@ for (item of arr) {
 // .concat() - joins two or more arrays into new array.
            //  array.slice(start, end)
 
+// .join() - creates/returns new string by concatenating all elements in an array
+          //  array.join(separator)
+
 // .slice() - returns selected elements in an array, as a new array.
           //  array.slice(inclusiveStart, exclusiveEnd)
 

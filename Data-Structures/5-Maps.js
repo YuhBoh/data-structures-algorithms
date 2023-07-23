@@ -34,6 +34,7 @@ console.log(map.size);
 // delete all key value pairs
 map.clear();
 
+// display all key value pairs
 for (const [key,value] of map) {
   console.log(`${key}: ${value}`)
 }
