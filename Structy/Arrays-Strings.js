@@ -1,3 +1,4 @@
+//UNCOMPRESS
 // Write a function, uncompress, that takes in a string as an argument. The input string will be formatted into multiple groups according to the following pattern:
 
 {/* <number><char>
@@ -40,3 +41,47 @@ const uncompress = (s) => {
 };
 
 console.log(uncompress("3a4s5d"));
+
+// COMPRESS
+// Write a function, compress, that takes in a string as an argument. The function should return a compressed version of the string where consecutive occurrences of the same characters are compressed into the number of occurrences followed by the character. Single character occurrences should not be changed.
+
+// 'aaa' compresses to '3a'
+// 'cc' compresses to '2c'
+// 't' should remain as 't'
+
+// You can assume that the input only contains alphabetic characters.
+
+const compress = (s) => {
+  // 2 variables = 0;
+  // result = [];
+
+  // while loop
+  // if [j] === [i], j++
+  // else count = j - i
+  // if count === 1, push [j]
+  // else push count + [j]
+
+  // i = j
+  // return results.join('')
+
+  i = 0;
+  j = 0;
+  result = [];
+
+  while (j <= s.length) {
+    if (s[j] === s[i]) {
+      j++;
+    } else {
+      let count = j - i;
+      if (count === 1) {
+        result.push(s[i]);
+      } else {
+        result.push(count, s[i]);
+      }
+      i = j;
+    }
+  }
+  return result.join("");
+};
+
+console.log(compress("ccaaatsss"));
