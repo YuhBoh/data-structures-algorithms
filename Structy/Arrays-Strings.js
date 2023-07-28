@@ -85,3 +85,81 @@ const compress = (s) => {
 };
 
 console.log(compress("ccaaatsss"));
+
+// ANAGRAMS (hash maps, objects)
+// Write a function, anagrams, that takes in two strings as arguments. The function should return a boolean indicating whether or not the strings are anagrams. Anagrams are strings that contain the same characters, but in any order.
+
+const anagrams = (s1, s2) => {
+  // create an obj
+  //for of loop
+  // if elements not in obj, ++;
+
+  // for of loop s2
+  // if ele in obj, --;
+  // else false not anagrams
+
+  // for in loop obj : in looks at keys.
+  // if elem in ibj !== 0, false
+
+  // return true
+  const count = {};
+  for (char of s1) {
+    if (!(char in count)) {
+      count[char] = 0;
+    }
+    count[char]++;
+  }
+
+  for (char of s2) {
+    if (char in count) {
+      count[char]--;
+    } else {
+      //else if char not in count, return false.
+      return false;
+    }
+  }
+
+  for (char in count) {
+    if (count[char] !== 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(anagrams("restful", "fluster"));
+
+// Most Frequent Char
+// Write a function, mostFrequentChar, that takes in a string as an argument. The function should return the most frequent character of the string. If there are ties, return the character that appears earlier in the string.
+
+// You can assume that the input string is non-empty.
+
+const mostFrequentChar = (s) => {
+  // count = {};
+  //for of (value)
+  // if not in count, add 1
+
+  count = {};
+  //most_frequent = 0; not looking for frequency, looking for letter
+
+  for (let char of s) {
+    if (!(char in count)) {
+      count[char] = 0;
+    }
+    count[char]++;
+  }
+
+  let most_frequent = null; // start with empty string
+  for (let char of s) {
+    if (most_frequent === null || count[char] > count[most_frequent]) {
+      most_frequent = char;
+    }
+  }
+
+  return most_frequent;
+};
+
+console.log(mostFrequentChar("potato"));
+  
+  

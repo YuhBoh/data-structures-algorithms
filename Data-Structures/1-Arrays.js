@@ -38,6 +38,9 @@ for (item of arr) {
 // .splice() - adds and/or removes array elements
            //  array.splice(position(not index), howmanyafterposition, item1, ....., itemX)
 
+// .forEach() - calls a function for each element in an array.
+             // array.forEach(function(currentValue, index, arr), thisValue)
+             
 // Big-O time complexity
 // Insert/Remove from end - O(1)
   // Push/Pop - O(1)
