@@ -150,14 +150,14 @@ const mostFrequentChar = (s) => {
     count[char]++;
   }
 
-  let most_frequent = null; // start with empty string
+  let best = null; // start with empty string
   for (let char of s) {
-    if (most_frequent === null || count[char] > count[most_frequent]) {
-      most_frequent = char;
+    if (best === null || count[char] > count[best]) {
+      best = char;
     }
   }
 
-  return most_frequent;
+  return best;
 };
 
 console.log(mostFrequentChar("potato"));
