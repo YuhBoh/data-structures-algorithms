@@ -158,6 +158,40 @@ const mostFrequentChar = (s) => {
   }
 
   return best;
+
+  // Pair Sum
+  //Write a function, pairSum, that takes in an array and a target sum as arguments. The function should return an array containing a pair of indices whose elements sum to the given target. The indices returned must be unique.
+
+  // Be sure to return the indices, not the elements themselves.
+
+  // There is guaranteed to be one such pair that sums to the target.
+  
+  // const pairSum = (numbers, targetSum) => {
+  //   // loop through numbers 2 variables
+  //   // if i+j = targetSum
+  //   // return indices
+  //   for(let i = 0; i < numbers.length ; i++) {
+  //     for(let j = i + 1; j < numbers.length ; j++) {
+  //       if (numbers[i] + numbers[j] === targetSum) {
+  //         return [i, j];
+  //       }
+  //     }
+  //   }
+  // };
+
+  const pairSum = (numbers, targetSum) => {
+    const previousNums = {}; //numbers you have seen.
+    for (let i = 0; i < numbers.length; i++) {
+      //i=index
+      const num = numbers[i];
+      const compliment = targetSum - num;
+
+      if (compliment in previousNums) {
+        return [i, previousNums[compliment]];
+      }
+      previousNums[num] = i;
+    }
+  };
 };
 
 console.log(mostFrequentChar("potato"));
