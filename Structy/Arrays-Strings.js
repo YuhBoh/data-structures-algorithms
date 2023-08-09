@@ -165,7 +165,7 @@ const mostFrequentChar = (s) => {
   // Be sure to return the indices, not the elements themselves.
 
   // There is guaranteed to be one such pair that sums to the target.
-  
+
   // const pairSum = (numbers, targetSum) => {
   //   // loop through numbers 2 variables
   //   // if i+j = targetSum
@@ -192,8 +192,88 @@ const mostFrequentChar = (s) => {
       previousNums[num] = i;
     }
   };
+  console.log(mostFrequentChar("potato"));
+
+  // PAIR PRODUCT
+  //   Write a function, pairProduct, that takes in an array and a target product as arguments. The function should return an array containing a pair of indices whose elements multiply to the given target. The indices returned must be unique.
+
+  // Be sure to return the indices, not the elements themselves.
+
+  // There is guaranteed to be one such pair whose product is the target.
+  // const pairProduct = (numbers, targetProduct) => {
+  //   // Brute Force
+  //   // nested loop
+  //   // if  num1 x num2 = targetProduct
+  //   // return [i, j]
+  //   for(i = 0; i < numbers.length; i++) {
+  //     for(j = i + 1; j < numbers.length; j++) {
+  //       if(numbers[i] * numbers[j] === targetProduct) {
+  //         return [i, j];
+  //       }
+  //     }
+  //   }
+  // };
+
+  const pairProduct = (numbers, targetProduct) => {
+    // Hash Map
+    // previousNums = {};
+    // for loop
+    // num = numbers[i];
+    // comp = targ/num
+    // if comp in previousNums
+    // return indices
+    // previousNums[num] = i
+    const previousNums = {};
+    for (i = 0; i < numbers.length; i++) {
+      let num = numbers[i];
+      let comp = targetProduct / num;
+      if (comp in previousNums) {
+        return [previousNums[comp], i];
+      }
+      previousNums[num] = i;
+    }
+  };
+
+  console.log(pairProduct([3, 2, 5, 4, 1], 8));
+
+  // INTERSECTION
+  //   Write a function, intersection, that takes in two arrays, a,b, as arguments. The function should return a new array containing elements that are in both of the two arrays.
+
+  // You may assume that each input array does not contain duplicate elements.
+  
+  // const intersection = (a, b) => {
+  //   // Brute Force
+  //   // Nested Loops
+  //   sameNum = [];
+  //   for(let i = 0; i < a.length; i++) {
+  //     for(let j = 0; j < b.length; j++) {
+  //       if(b[j] === a[i]) {
+  //         sameNum.push(b[j]);
+  //       }
+  //     }
+  //   }
+  //   return sameNum;
+  // };
+
+  const intersection = (a, b) => {
+    // Use Set method (only values)
+    // is a || b in set?
+    // push into empty arr
+    // return
+    const sameNum = [];
+    let setA = new Set(a);
+    for (let num of b) {
+      if (setA.has(num)) {
+        sameNum.push(num);
+      }
+    }
+
+    return sameNum;
+  };
+
+  console.log(intersection([2, 4, 6], [4, 2]));
 };
 
-console.log(mostFrequentChar("potato"));
+
   
   
