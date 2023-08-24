@@ -240,7 +240,7 @@ const mostFrequentChar = (s) => {
   //   Write a function, intersection, that takes in two arrays, a,b, as arguments. The function should return a new array containing elements that are in both of the two arrays.
 
   // You may assume that each input array does not contain duplicate elements.
-  
+
   // const intersection = (a, b) => {
   //   // Brute Force
   //   // Nested Loops
@@ -268,7 +268,7 @@ const mostFrequentChar = (s) => {
       }
     }
 
-    return sameNum;
+    return sameNu;
   };
 
   console.log(intersection([2, 4, 6], [4, 2]));
